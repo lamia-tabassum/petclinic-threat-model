@@ -299,6 +299,19 @@
                   "new": false,
                   "number": 2,
                   "score": ""
+                },
+                {
+                  "id": "042f2111-872d-4ed9-b0d4-c71bc9183197",
+                  "title": "API Gateway Resource Exhaustion",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Denial of service",
+                  "description": "An attacker may send excessive or resource-intensive requests to the API Gateway, potentially overwhelming downstream services and reducing application availability.",
+                  "mitigation": "Verify request-rate limiting, resource limits, timeouts, and monitoring. Apply appropriate controls to prevent excessive requests from exhausting system resources.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 6,
+                  "score": ""
                 }
               ],
               "threatFrequency": {
@@ -306,16 +319,9 @@
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 0,
-                "denialOfService": 0,
+                "denialOfService": 1,
                 "elevationOfPrivilege": 0
               }
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -805,8 +811,8 @@
                 "text": "Visits Service"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -902,14 +908,58 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "52f6a11e-ce4d-494d-920c-8be09ffb645d",
+                  "title": "Untraceable Modification of Visit Records",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Repudiation",
+                  "description": "A user may modify or delete veterinary visit records and subsequently deny performing the action if sufficient audit logging is not implemented.",
+                  "mitigation": "Verify that security-relevant actions are logged with timestamps and authenticated user identities, and protect audit logs against unauthorized modification.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 4,
+                  "score": ""
+                },
+                {
+                  "id": "4b80fc6e-f66e-4f2f-b3a7-56ec56cbb379",
+                  "title": "Unauthorized Access to Restricted Visit Operations",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Elevation of privilege",
+                  "description": "A user with limited permissions may attempt to invoke restricted visit-management operations if role-based or object-level authorization is insufficient.",
+                  "mitigation": "Verify role-based and object-level authorization on sensitive operations, enforce least privilege, and test that unauthorized users cannot perform restricted actions.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 7,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 1
+              }
             },
-            "zIndex": 11
+            "zIndex": 11,
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove",
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
+            }
           },
           {
             "position": {
@@ -1027,7 +1077,15 @@
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             },
             "zIndex": 12
           },
@@ -1045,11 +1103,13 @@
                 "text": "Customers DB"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1146,13 +1206,33 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "d18b5781-35b7-4f44-bb1e-29a6a7daa7f3",
+                  "title": "Unauthorized Exposure of Customer Information",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Information disclosure",
+                  "description": "Sensitive customer and pet records may be exposed if database access controls, API authorization, or data protection mechanisms are insufficient.",
+                  "mitigation": "Verify database access restrictions, enforce least-privilege permissions, protect sensitive data in transit and at rest as appropriate, and validate access controls.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 5,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
             }
           },
           {
@@ -1409,6 +1489,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 2
+    "threatTop": 7
   }
 }
