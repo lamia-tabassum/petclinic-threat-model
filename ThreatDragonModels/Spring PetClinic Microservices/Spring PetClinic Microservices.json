@@ -183,8 +183,8 @@
                 "text": "API Gateway"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -281,12 +281,41 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "95c8ba4b-921e-4cfa-9533-147bdd54567d",
+                  "title": "Impersonation of a Legitimate User",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Spoofing",
+                  "description": "An attacker may attempt to impersonate a legitimate PetClinic user by exploiting weaknesses in authentication or session management.",
+                  "mitigation": "Verify authentication controls, validate session credentials, enforce authorization, and prevent unauthorized access to protected API endpoints.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 2,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -429,14 +458,7 @@
                 "elevationOfPrivilege": 0
               }
             },
-            "zIndex": 10,
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
-            }
+            "zIndex": 10
           },
           {
             "shape": "flow",
@@ -1387,6 +1409,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 1
+    "threatTop": 2
   }
 }
