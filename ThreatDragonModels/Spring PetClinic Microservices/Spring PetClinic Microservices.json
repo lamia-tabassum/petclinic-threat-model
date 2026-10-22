@@ -1,0 +1,29 @@
+{
+  "version": "2.6.2",
+  "release_version": "Initial Draft 1.0",
+  "released_at": "",
+  "summary": {
+    "title": "Spring PetClinic Microservices",
+    "owner": "Lamia Tabassum",
+    "description": "Spring PetClinic is a microservices-based veterinary clinic application. This preliminary threat model focuses on the Customers, Vets, and Visits services, including communication through the API Gateway and interactions with their data stores. The objective is to identify potential security threats using STRIDE, examine relevant trust boundaries, and document possible mitigations. All identified threats are preliminary hypotheses pending source-code analysis and validation.",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [
+      {
+        "id": 0,
+        "title": "PetClinic Microservices — Data Flow Diagram",
+        "diagramType": "STRIDE",
+        "placeholder": "New STRIDE diagram description",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.6.2",
+        "cells": [],
+        "description": "Customers, Vets and Visits — Preliminary Threat Model"
+      }
+    ],
+    "diagramTop": 1,
+    "reviewer": "",
+    "threatTop": 0
+  }
+}
